@@ -2,7 +2,7 @@
 
 require_once 'connect.php';
 require_once 'header.php';
-
+session_start();
  // Using database connection file here
  if(!isset($_POST['update'])){ // when click on Update button
 
@@ -30,7 +30,8 @@ if(isset($_POST['update'])) // when click on Update button
     if( empty($item) || empty($day))
     {
         echo "Please fillout all required fields";
-    } 
+    }
+
      $sql = "UPDATE activity SET item = '$item',
       day = '$day', status = '$status' WHERE id = '$id' ";
 
@@ -38,6 +39,7 @@ if(isset($_POST['update'])) // when click on Update button
         echo "<div class='alert alert-success'>Successfully added new todo</div>";
         mysqli_close($con); // Close connection
         header("location:index.php"); // redirects to all records page
+        $_SESSION['sucess'] = 'Sucessfully updated';
         exit;
     
     }else{
@@ -63,7 +65,7 @@ if(isset($_POST['update'])) // when click on Update button
 
     <div class="form-group">
     <label for="">Day</label>
-     <input type="date" class="form-control" name="day" value="<?php echo $row['day'] ?>" placeholder="Enter Age" Required>
+     <input type="date" class="form-control" name="day" value="<?php echo $row['day'] ?>" required placeholder="Enter Age">
     </div>
 
     <div class="form-group">
