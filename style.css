@@ -1,0 +1,18 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    text-align: center;
+    width: 70rem;
+    height: max-content;
+    margin: 12rem auto;
+    background-color: rgb(168, 171, 190);
+    color: #0c0c00;
+    box-shadow: 2px 1px 1px 2px #fff;
+}
+form{
+    margin: 0 auto;
+    text-align: center;
+}
