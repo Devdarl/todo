@@ -32,7 +32,12 @@ if( $result->num_rows > 0)
 ?>
 <h2>List of Todos</h2>
 <div class='alert alert-success'>
-   <?php echo $email = htmlspecialchars($_SESSION['success']); ?>
+
+   <?php 
+   if(isset($success))
+   echo $email = htmlspecialchars($_SESSION['success']); 
+  session_destroy();
+  ?>
     </div>;
 <table class="table table-bordered table-striped">
     <tr>
