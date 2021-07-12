@@ -5,6 +5,14 @@ require_once 'header.php';
 
 
 echo "<div class='container'>";
+session_start();
+
+if (isset($_SESSION['success'])) {
+   $success = $_SESSION['success'];
+
+}else{
+   
+}
 
 
 if( isset($_POST['delete'])){
@@ -23,6 +31,9 @@ if( $result->num_rows > 0)
 {
 ?>
 <h2>List of Todos</h2>
+<div class='alert alert-success'>
+   <?php echo $email = htmlspecialchars($_SESSION['success']); ?>
+    </div>;
 <table class="table table-bordered table-striped">
     <tr>
         <td>Item</td>

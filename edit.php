@@ -39,7 +39,7 @@ if(isset($_POST['update'])) // when click on Update button
         echo "<div class='alert alert-success'>Successfully added new todo</div>";
         mysqli_close($con); // Close connection
         header("location:index.php"); // redirects to all records page
-        $_SESSION['sucess'] = 'Sucessfully updated';
+        $_SESSION['success'] = 'Sucessfully updated';
         exit;
     
     }else{

@@ -19,6 +19,8 @@ if(isset($_POST['addnew'])){
 
         if( $con->query($sql) === TRUE){
             echo "<div class='alert alert-success'>Successfully added new todo</div>";
+            $_SESSION['success'] = 'Sucessfully added';
+            
         }else{
             echo "<div class='alert alert-danger'>Error: There was an error while adding new todo</div>";
         }
